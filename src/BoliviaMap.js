@@ -4,6 +4,8 @@ import Highcharts from "highcharts";
 import HighchartsMap from "highcharts/modules/map";
 import HighchartsReact from "highcharts-react-official";
 
+import boliviaPopulation from './bolvia-population.json'
+
 HighchartsMap(Highcharts);
 
 function MapExample({ data, topology }) {
@@ -12,11 +14,11 @@ function MapExample({ data, topology }) {
     return {
       chart: { borderWidth: 1, map: topology },
 
-      title: { text: 'World population 2016 by country' },
+      title: { text: 'Bolivia 2016 by departament' },
 
       subtitle: { text: 'Demo of Highcharts map with bubbles' },
 
-      accessibility: { description: 'We see how China and India by far are the countries with the largest population.' },
+      accessibility: { description: 'Description goes here' },
 
       legend: { enabled: false },
 
@@ -29,15 +31,15 @@ function MapExample({ data, topology }) {
 
       series: [{
         name: 'Countries',
-        color: 'red',
+        color: '#E0E0E0',
         enableMouseTracking: false
       }, {
         type: 'mapbubble',
-        name: 'Population 2016',
-        joinBy: ['iso-a3', 'code3'],
-        data: data,
+        name: 'Population Bolivia',
+        joinBy: ['hc-a2', 'code3'],
+        data: boliviaPopulation,
         minSize: 4,
-        maxSize: '12%',
+        maxSize: '10%',
         tooltip: {
           pointFormat: '{point.properties.hc-a2}: {point.z} thousands'
         }
