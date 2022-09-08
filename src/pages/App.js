@@ -61,8 +61,9 @@ function App() {
           topology={topologyBolivia}
         />
       )}
-
-      <BarChart></BarChart>
+      {!loadingBoliviaData && (
+        <BarChart></BarChart>
+      )}
     </div>
   );
 }
