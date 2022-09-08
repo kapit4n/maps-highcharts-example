@@ -1,69 +1,35 @@
 import './App.css';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import MapExample from '../components/WorldMap';
 import MapExampleBolivia from '../components/BoliviaMap';
 import BarChart from '../components/BarChart';
+import useLoadData from '../hooks/useLoadData'
 
 function App() {
 
-  const [topology, setTopology] = useState(null)
-  const [topologyBolivia, setTopologyBolivia] = useState(null)
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [loadingBoliviaData, setLoadingBoliviaData] = useState(true)
+  const tWorldUrl = 'https://code.highcharts.com/mapdata/custom/world.topo.json'
+  const pWorldUrl = 'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/world-population.json'
+  const tBoliviaUrl = 'https://code.highcharts.com/mapdata/countries/bo/bo-all.topo.json'
 
-  // move this to custom hook
-  useEffect(() => {
-
-    async function loadWorldData() {
-      const t = await fetch(
-        'https://code.highcharts.com/mapdata/custom/world.topo.json'
-      ).then(response => response.json());
-
-      setTopology(t)
-
-      const d = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/world-population.json').then(response => response.json());
-      setData(d)
-
-      setLoading(false)
-    }
-
-    loadWorldData()
-  }, [])
-
-  // move this to custom hook
-  useEffect(() => {
-
-    async function loadBoliviaData() {
-      const t = await fetch(
-        'https://code.highcharts.com/mapdata/countries/bo/bo-all.topo.json'
-      ).then(response => response.json());
-
-      setTopologyBolivia(t)
-
-      setLoadingBoliviaData(false)
-    }
-
-    loadBoliviaData()
-  }, [])
+  const { loading: loadingBoliviaTopology, data: boliviaTopology } = useLoadData({ url: tBoliviaUrl })
+  const { loading: loadingWorldTopology, data: worldTopology } = useLoadData({ url: tWorldUrl })
+  const { loading: loadingWorldPopulation, data: worldPopulation } = useLoadData({ url: pWorldUrl })
 
   return (
     <div>
-      {!loading && (
+      {!(loadingWorldTopology || loadingWorldPopulation) && (
         <MapExample
-          topology={topology}
-          data={data}
+          topology={worldTopology}
+          data={worldPopulation}
         />
       )}
 
-      {!loadingBoliviaData && (
+      {!loadingBoliviaTopology && (
         <MapExampleBolivia
-          topology={topologyBolivia}
+          topology={boliviaTopology}
         />
       )}
-      {!loadingBoliviaData && (
-        <BarChart></BarChart>
-      )}
+      <BarChart></BarChart>
     </div>
   );
 }
