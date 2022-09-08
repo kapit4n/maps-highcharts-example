@@ -2,7 +2,7 @@
   "name": "maps-example",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kapit4n.github.io/maps-highcharts-example",
+  "homepage": "https://kapit4n.github.io",
   "dependencies": {
     "@highcharts/map-collection": "^2.0.1",
     "@testing-library/jest-dom": "^5.16.5",
