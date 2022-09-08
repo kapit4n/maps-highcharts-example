@@ -7,7 +7,7 @@ class BarChart extends React.PureComponent {
         super(props)
         this.chartRef = React.createRef()
         this.labelsRef = React.createRef()
-        this.dataset = [100, 200, 300, 400, 500]
+        this.dataset = [{ value: 500, label: 'RED', color: 'red' }, { value: 300, label: 'YELLOW', color: 'yellow' }, { value: 100, label: 'GREEN', color: 'green' }]
     }
 
     componentDidMount() {
@@ -30,26 +30,24 @@ class BarChart extends React.PureComponent {
 
         let rect_width = 95
 
-         svg.selectAll('rect')
-             .data(this.dataset)
-             .enter()
-             .append('rect')
-             .attr('x', (d, i) => 5 + i * (rect_width + 5))
-             .attr('y', d => size - d)
-             .attr('width', rect_width)
-             .attr('height', d => d)
-             .attr('fill', 'lightblue')
+        svg.selectAll('rect')
+            .data(this.dataset)
+            .enter()
+            .append('rect')
+            .attr('x', (d, i) => 5 + i * (rect_width + 5))
+            .attr('y', d => size - d.value)
+            .attr('width', rect_width)
+            .attr('height', d => d.value)
+            .attr('fill', d => d.color)
 
-        labels.selectAll('p').data(this.dataset).enter().append("p").text(() => "Text")
+        labels.selectAll('p').data(this.dataset).enter().append("p").text((p) => p.label)
             .style('width', `${rect_width + 5}px`)
-            .attr('height', d => d)
-            .attr('y', d => size - d)
 
     }
 
     render() {
         return (
-            <div ref={this.chartRef} style={{display: "block"}}>
+            <div ref={this.chartRef} style={{ display: "block" }}>
             </div>
         )
     }
