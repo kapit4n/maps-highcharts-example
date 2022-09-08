@@ -39,9 +39,38 @@ class BarChart extends React.PureComponent {
             .attr('width', rect_width)
             .attr('height', d => d.value)
             .attr('fill', d => d.color)
+            .on("mouseover", function (d) {
+                d3.select(this)
+                    .transition()
+                    .duration(100)
+                    .style("opacity", 0.5);
+            })
+            .on("mouseout", function (d) {
+                d3.select(this)
+                    .transition()
+                    .duration(100)
+                    .style("opacity", 1);
+            });
 
-        labels.selectAll('p').data(this.dataset).enter().append("p").text((p) => p.label)
+        labels.selectAll('p')
+            .data(this.dataset)
+            .enter()
+            .append("p").text((p) => p.label)
             .style('width', `${rect_width + 5}px`)
+            .on('mouseover', function (d, i) {
+                d3.select(this)
+                    .transition()
+                    .duration(100)
+                    .style("opacity", 0.5);
+
+            })
+            .on('mouseout', function (d, i) {
+                d3.select(this)
+                    .transition()
+                    .duration(100)
+                    .style("opacity", 1);
+
+            })
 
     }
 
