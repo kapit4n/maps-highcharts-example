@@ -2,6 +2,7 @@ import './App.css';
 import React, { useEffect, useState } from 'react'
 import MapExample from '../components/WorldMap';
 import MapExampleBolivia from '../components/BoliviaMap';
+import BarChart from '../components/BarChart';
 
 function App() {
 
@@ -60,6 +61,8 @@ function App() {
           topology={topologyBolivia}
         />
       )}
+
+      <BarChart></BarChart>
     </div>
   );
 }
