@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react'
-import MapExample from './MapExample';
-import MapExampleBolivia from './BoliviaMap';
+import MapExample from '../components/WorldMap';
+import MapExampleBolivia from '../components/BoliviaMap';
 
 function App() {
 
@@ -11,6 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [loadingBoliviaData, setLoadingBoliviaData] = useState(true)
 
+  // move this to custom hook
   useEffect(() => {
 
     async function loadWorldData() {
@@ -29,6 +30,7 @@ function App() {
     loadWorldData()
   }, [])
 
+  // move this to custom hook
   useEffect(() => {
 
     async function loadBoliviaData() {
@@ -52,7 +54,8 @@ function App() {
           data={data}
         />
       )}
-      {!loading && (
+
+      {!loadingBoliviaData && (
         <MapExampleBolivia
           topology={topologyBolivia}
         />

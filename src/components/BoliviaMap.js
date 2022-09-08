@@ -4,7 +4,7 @@ import Highcharts from "highcharts";
 import HighchartsMap from "highcharts/modules/map";
 import HighchartsReact from "highcharts-react-official";
 
-import boliviaPopulation from './bolvia-population.json'
+import boliviaPopulation from '../data/bolivia-population.json'
 
 HighchartsMap(Highcharts);
 
@@ -14,9 +14,9 @@ function MapExample({ data, topology }) {
     return {
       chart: { borderWidth: 1, map: topology },
 
-      title: { text: 'Bolivia 2016 by departament' },
+      title: { text: 'Bolivia Population by department' },
 
-      subtitle: { text: 'Demo of Highcharts map with bubbles' },
+      subtitle: { text: 'More detailed info for Bolivia Country' },
 
       accessibility: { description: 'Description goes here' },
 
@@ -30,7 +30,7 @@ function MapExample({ data, topology }) {
       },
 
       series: [{
-        name: 'Countries',
+        name: 'Departments',
         color: '#E0E0E0',
         enableMouseTracking: false
       }, {
