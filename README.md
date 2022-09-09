@@ -2,4 +2,4 @@
 
 https://kapit4n.github.io/maps-highcharts-example/
 
-![image](https://user-images.githubusercontent.com/277572/189165770-a83dd123-9e60-4631-a01a-6b2cbbee67ed.png)
+![image](https://user-images.githubusercontent.com/277572/189381214-b63bea21-29ad-4ef5-81b3-dff529010ef2.png)
