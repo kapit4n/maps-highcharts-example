@@ -1,0 +1,28 @@
+.tab-header-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+h2 {
+  border-bottom: 1px solid grey;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: lightblue;
+  border-bottom: 1px solid black;
+}
+
+h2:hover {
+  opacity: 0.5;
+}
+
+h2:first-child {
+  margin-left: 0;
+}
+
+h2:last-child {
+  margin-right: 0;
+}
+
