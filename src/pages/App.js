@@ -1,54 +1,41 @@
 import './App.css';
 import React, { useState } from 'react'
-import MapExample from '../components/WorldMap';
-import MapExampleBolivia from '../components/BoliviaMap';
+import BoliviaMapContainer from '../containers/WorldMapContainer';
+import WorldMapContainer from '../containers/BoliviaMapContainer';
 import BarChart from '../components/BarChart';
-import useLoadData from '../hooks/useLoadData'
 import TabContainer from '../components/TabContainer';
 import TabHeader from '../components/TabHeader';
+import LineChart from '../components/LineChart';
 
 const TAB_INDEX = 'index'
 const TAB_BOLIVIA = 'bolivia'
 const TAB_CHARTS = 'charts'
+const TAB_BAR_CHART = 'barchart'
 
 function App() {
-
-  const tWorldUrl = 'https://code.highcharts.com/mapdata/custom/world.topo.json'
-  const pWorldUrl = 'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/world-population.json'
-  const tBoliviaUrl = 'https://code.highcharts.com/mapdata/countries/bo/bo-all.topo.json'
-
-  const { loading: loadingBoliviaTopology, data: boliviaTopology } = useLoadData({ url: tBoliviaUrl })
-  const { loading: loadingWorldTopology, data: worldTopology } = useLoadData({ url: tWorldUrl })
-  const { loading: loadingWorldPopulation, data: worldPopulation } = useLoadData({ url: pWorldUrl })
-
 
   const [selectedTab, setSelectedTab] = useState('index')
 
   return (
     <div>
-
-      <TabHeader tabNames={[TAB_INDEX, TAB_BOLIVIA, TAB_CHARTS]} selectedTab={selectedTab} onChange={setSelectedTab} />
-
+      <TabHeader tabNames={[TAB_INDEX, TAB_BOLIVIA, TAB_CHARTS, TAB_BAR_CHART]} selectedTab={selectedTab} onChange={setSelectedTab} />
+      
       <TabContainer tabKey={TAB_INDEX} selectedTab={selectedTab}>
-        {!(loadingWorldTopology || loadingWorldPopulation) && (
-          <MapExample
-            topology={worldTopology}
-            data={worldPopulation}
-          />
-        )}
+        <WorldMapContainer />
       </TabContainer>
 
       <TabContainer tabKey={TAB_BOLIVIA} selectedTab={selectedTab}>
-        {!loadingBoliviaTopology && (
-          <MapExampleBolivia
-            topology={boliviaTopology}
-          />
-        )}
+          <BoliviaMapContainer />
       </TabContainer>
 
       <TabContainer tabKey={TAB_CHARTS} selectedTab={selectedTab}>
         <BarChart></BarChart>
       </TabContainer>
+
+      <TabContainer tabKey={TAB_BAR_CHART} selectedTab={selectedTab}>
+        <LineChart categories={['cat1']} data1={[1, 2, 3]} data2={[4, 5, 6]} data3={[1, 4, 7]}/>
+      </TabContainer>
+    
     </div>
   );
 }
