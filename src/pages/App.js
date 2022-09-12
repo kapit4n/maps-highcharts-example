@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from 'react'
-import BoliviaMapContainer from '../containers/WorldMapContainer';
-import WorldMapContainer from '../containers/BoliviaMapContainer';
+import WorldMapContainer from '../containers/WorldMapContainer';
+import BoliviaMapContainer from '../containers/BoliviaMapContainer';
 import BarChart from '../components/BarChart';
 import TabContainer from '../components/TabContainer';
 import TabHeader from '../components/TabHeader';
