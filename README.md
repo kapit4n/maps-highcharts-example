@@ -2,4 +2,4 @@
 
 https://kapit4n.github.io/react-code-x1/
 
-![image](https://user-images.githubusercontent.com/277572/189381214-b63bea21-29ad-4ef5-81b3-dff529010ef2.png)
+![image](https://user-images.githubusercontent.com/277572/189780154-b5a9e3a9-ed08-4089-a221-fd37cb5afe22.png)
