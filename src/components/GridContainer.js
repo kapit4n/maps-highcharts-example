@@ -15,3 +15,7 @@ export default function GridContainer({ columns, children }) {
     </div>
   )
 }
+
+GridContainer.defaultProps = {
+  columns: 4
+}

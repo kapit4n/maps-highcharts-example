@@ -7,12 +7,21 @@ import TabContainer from '../components/TabContainer';
 import TabHeader from '../components/TabHeader';
 import LineChart from '../components/LineChart';
 import GridContainer from '../components/GridContainer';
+import Card from '../components/Card'
 
-const TAB_INDEX = 'index'
+const TAB_INDEX = 'indexz'
 const TAB_BOLIVIA = 'bolivia'
 const TAB_CHARTS = 'charts'
 const TAB_BAR_CHART = 'barchart'
-const TAB_GRID = 'grid'
+const TAB_GRID = 'index'
+
+const description = {
+  golang: "Go is a statically typed, compiled programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency.",
+  scala: "Scala is a strong statically typed general-purpose programming language which supports both object-oriented programming and functional programming. Designed to be concise, many of Scala's design decisions are aimed to address criticisms of Java.",
+  react: "React is a free and open-source front-end JavaScript library for building user interfaces based on UI components. It is maintained by Meta and a community of individual developers and companies.",
+  d3: "D3.js is a JavaScript library for producing dynamic, interactive data visualizations in web browsers. It makes use of Scalable Vector Graphics, HTML5, and Cascading Style Sheets standards. It is the successor to the earlier Protovis framework.",
+  javascript: "JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries."
+}
 
 function App() {
 
@@ -39,32 +48,12 @@ function App() {
       </TabContainer>
 
       <TabContainer tabKey={TAB_GRID} selectedTab={selectedTab}>
-        <GridContainer columns={3}>
-          <div className="grid-container">
-            <h3>
-              GOLANG
-            </h3>
-            Go is a statically typed, compiled programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency. </div>
-          <div>
-            <h3>SCALA</h3>
-            Scala is a strong statically typed general-purpose programming language which supports both object-oriented programming and functional programming. Designed to be concise, many of Scala's design decisions are aimed to address criticisms of Java.
-          </div>
-          <div>
-            <h3>REACT JS</h3>
-            React is a free and open-source front-end JavaScript library for building user interfaces based on UI components. It is maintained by Meta and a community of individual developers and companies.
-          </div>
-          <div>
-            <h3>D3.JS</h3>
-            D3.js is a JavaScript library for producing dynamic, interactive data visualizations in web browsers. It makes use of Scalable Vector Graphics, HTML5, and Cascading Style Sheets standards. It is the successor to the earlier Protovis framework.
-          </div>
-          <div>
-            <h3>JAVASCRIPT</h3>
-            JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries.
-          </div>
-          <div>
-          </div>
-          <div>
-          </div>
+        <GridContainer>
+          <Card title="GOLANG" description={description.golang} />
+          <Card title="SCALA" description={description.scala} />
+          <Card title="D3" description={description.d3} />
+          <Card title="JAVASCRIPT" description={description.javascript} />
+          <Card title="REACT" description={description.react} />
         </GridContainer>
       </TabContainer>
     </div>
