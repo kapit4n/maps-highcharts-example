@@ -3,6 +3,9 @@ import PlaceholderLoading from 'react-placeholder-loading'
 
 export default function LoaderThree() {
   return (
-    <PlaceholderLoading shape='rect' width={200} height={50} />
+    <div>
+      <h3>react-placeholder-loading</h3>
+      <PlaceholderLoading shape='rect' width={200} height={50} />
+    </div>
   )
 }

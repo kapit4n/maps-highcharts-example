@@ -10,6 +10,7 @@ import GridContainer from '../components/GridContainer';
 import Card from '../components/Card'
 import LoaderTwo from '../components/loading/LoaderTwo';
 import LoaderThree from '../components/loading/LoaderThree';
+import LoaderFour from '../components/loading/LoaderFour';
 
 const TAB_INDEX = 'indexz'
 const TAB_BOLIVIA = 'bolivia'
@@ -61,44 +62,13 @@ function App() {
       </TabContainer>
       <TabContainer tabKey={TAB_LOADING} selectedTab={selectedTab}>
         <div>
+          <h2>Loader Two</h2>
           <LoaderTwo />
-          <LoaderTwo />
-          <LoaderTwo />
-          <LoaderTwo />
-          <LoaderTwo />
-          <LoaderTwo />
-          <LoaderTwo />
-          <LoaderTwo />
-          <LoaderTwo />
-          <LoaderTwo />
-          <LoaderTwo />
+          <h2>Loader Three</h2>
           <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
-          <LoaderThree />
+          <h2>Loader Four</h2>
+          <LoaderFour />
+
         </div>
       </TabContainer>
     </div>
