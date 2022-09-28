@@ -8,12 +8,14 @@ import TabHeader from '../components/TabHeader';
 import LineChart from '../components/LineChart';
 import GridContainer from '../components/GridContainer';
 import Card from '../components/Card'
+import LoaderOne from '../components/loading/LoaderOne';
 
 const TAB_INDEX = 'indexz'
 const TAB_BOLIVIA = 'bolivia'
 const TAB_CHARTS = 'charts'
 const TAB_BAR_CHART = 'barchart'
 const TAB_GRID = 'index'
+const TAB_LOADING = 'loading'
 
 const description = {
   golang: "Go is a statically typed, compiled programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency.",
@@ -29,7 +31,7 @@ function App() {
 
   return (
     <div>
-      <TabHeader tabNames={[TAB_INDEX, TAB_BOLIVIA, TAB_CHARTS, TAB_BAR_CHART, TAB_GRID]} selectedTab={selectedTab} onChange={setSelectedTab} />
+      <TabHeader tabNames={[TAB_INDEX, TAB_BOLIVIA, TAB_CHARTS, TAB_BAR_CHART, TAB_GRID, TAB_LOADING]} selectedTab={selectedTab} onChange={setSelectedTab} />
 
       <TabContainer tabKey={TAB_INDEX} selectedTab={selectedTab}>
         <WorldMapContainer />
@@ -55,6 +57,11 @@ function App() {
           <Card title="JAVASCRIPT" description={description.javascript} />
           <Card title="REACT" description={description.react} />
         </GridContainer>
+      </TabContainer>
+      <TabContainer tabKey={TAB_LOADING} selectedTab={selectedTab}>
+        <div>
+          <LoaderOne />
+        </div>
       </TabContainer>
     </div>
   );
