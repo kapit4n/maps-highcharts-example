@@ -8,7 +8,7 @@ import TabHeader from '../components/TabHeader';
 import LineChart from '../components/LineChart';
 import GridContainer from '../components/GridContainer';
 import Card from '../components/Card'
-import LoaderOne from '../components/loading/LoaderOne';
+import LoaderTwo from '../components/loading/LoaderTwo';
 
 const TAB_INDEX = 'indexz'
 const TAB_BOLIVIA = 'bolivia'
@@ -60,7 +60,7 @@ function App() {
       </TabContainer>
       <TabContainer tabKey={TAB_LOADING} selectedTab={selectedTab}>
         <div>
-          <LoaderOne />
+          <LoaderTwo />
         </div>
       </TabContainer>
     </div>
