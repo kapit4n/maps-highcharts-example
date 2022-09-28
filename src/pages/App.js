@@ -9,6 +9,7 @@ import LineChart from '../components/LineChart';
 import GridContainer from '../components/GridContainer';
 import Card from '../components/Card'
 import LoaderTwo from '../components/loading/LoaderTwo';
+import LoaderThree from '../components/loading/LoaderThree';
 
 const TAB_INDEX = 'indexz'
 const TAB_BOLIVIA = 'bolivia'
@@ -61,6 +62,43 @@ function App() {
       <TabContainer tabKey={TAB_LOADING} selectedTab={selectedTab}>
         <div>
           <LoaderTwo />
+          <LoaderTwo />
+          <LoaderTwo />
+          <LoaderTwo />
+          <LoaderTwo />
+          <LoaderTwo />
+          <LoaderTwo />
+          <LoaderTwo />
+          <LoaderTwo />
+          <LoaderTwo />
+          <LoaderTwo />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
+          <LoaderThree />
         </div>
       </TabContainer>
     </div>

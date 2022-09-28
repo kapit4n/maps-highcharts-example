@@ -1,9 +1,9 @@
 import React from 'react'
-import { ShimmerButton } from 'react-shimmer-effects'
+import { ShimmerTitle } from 'react-shimmer-effects'
 
 export default function LoaderTwo() {
   return (
-    <ShimmerButton size="md" />
+    <ShimmerTitle line={2} gap={10} variant="primary" />
   )
 }
 
