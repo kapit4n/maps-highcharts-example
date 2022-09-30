@@ -1,4 +1,5 @@
 import StyledContentLoader from 'styled-content-loader'
+import withCheckbox from '../../decorator/BoxContainer'
 
 const ComExample = () => {
   return (
@@ -9,10 +10,12 @@ const ComExample = () => {
   )
 }
 
-export default function Loader() {
+const Loader = () => {
   return (
     <StyledContentLoader>
       <ComExample />
     </StyledContentLoader>
   )
 }
+
+export default Loader

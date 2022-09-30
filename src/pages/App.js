@@ -12,6 +12,7 @@ import LoaderTwo from '../components/loading/LoaderTwo';
 import LoaderThree from '../components/loading/LoaderThree';
 import LoaderFour from '../components/loading/LoaderFour';
 import LoaderSix from '../components/loading/LoaderSix';
+import BoxContainer from '../decorator/BoxContainer';
 
 const TAB_INDEX = 'indexz'
 const TAB_BOLIVIA = 'bolivia'
@@ -64,15 +65,15 @@ function App() {
       <TabContainer tabKey={TAB_LOADING} selectedTab={selectedTab}>
         <div>
           <h2>Loader Two</h2>
-          <LoaderTwo />
+          <BoxContainer component={<LoaderTwo />} />   
           <h2>Loader Three</h2>
-          <LoaderThree />
+          <BoxContainer component={<LoaderThree />} />   
           <h2>Loader Four</h2>
-          <LoaderFour />
+          <BoxContainer component={<LoaderFour />} />   
           <h2>Loader Five Does not work</h2>
           LoaderFive(react-bones)
           <h2>Loader Six</h2>
-          <LoaderSix />
+          <BoxContainer component={<LoaderSix />} />   
         </div>
       </TabContainer>
     </div>
