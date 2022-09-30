@@ -11,6 +11,7 @@ import Card from '../components/Card'
 import LoaderTwo from '../components/loading/LoaderTwo';
 import LoaderThree from '../components/loading/LoaderThree';
 import LoaderFour from '../components/loading/LoaderFour';
+import LoaderSix from '../components/loading/LoaderSix';
 
 const TAB_INDEX = 'indexz'
 const TAB_BOLIVIA = 'bolivia'
@@ -68,7 +69,10 @@ function App() {
           <LoaderThree />
           <h2>Loader Four</h2>
           <LoaderFour />
-
+          <h2>Loader Five Does not work</h2>
+          LoaderFive(react-bones)
+          <h2>Loader Six</h2>
+          <LoaderSix />
         </div>
       </TabContainer>
     </div>
