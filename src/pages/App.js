@@ -8,11 +8,8 @@ import TabHeader from '../components/TabHeader';
 import LineChart from '../components/LineChart';
 import GridContainer from '../components/GridContainer';
 import Card from '../components/Card'
-import LoaderTwo from '../components/loading/LoaderTwo';
-import LoaderThree from '../components/loading/LoaderThree';
-import LoaderFour from '../components/loading/LoaderFour';
-import LoaderSix from '../components/loading/LoaderSix';
-import BoxContainer from '../decorator/BoxContainer';
+import Loader from './Loader';
+
 
 const TAB_INDEX = 'indexz'
 const TAB_BOLIVIA = 'bolivia'
@@ -63,18 +60,7 @@ function App() {
         </GridContainer>
       </TabContainer>
       <TabContainer tabKey={TAB_LOADING} selectedTab={selectedTab}>
-        <div>
-          <h2>Loader Two</h2>
-          <BoxContainer component={<LoaderTwo />} />   
-          <h2>Loader Three</h2>
-          <BoxContainer component={<LoaderThree />} />   
-          <h2>Loader Four</h2>
-          <BoxContainer component={<LoaderFour />} />   
-          <h2>Loader Five Does not work</h2>
-          LoaderFive(react-bones)
-          <h2>Loader Six</h2>
-          <BoxContainer component={<LoaderSix />} />   
-        </div>
+       <Loader />
       </TabContainer>
     </div>
   );
