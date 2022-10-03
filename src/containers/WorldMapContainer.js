@@ -1,6 +1,6 @@
 import React from 'react'
 import useLoadData from '../hooks/useLoadData'
-import WorldMap from '../components/WorldMap'
+import WorldMap from '../components/charts/WorldMap'
 
 export default function Container() {
   const tWorldUrl = 'https://code.highcharts.com/mapdata/custom/world.topo.json'

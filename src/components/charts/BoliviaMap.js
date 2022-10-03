@@ -4,7 +4,7 @@ import Highcharts from "highcharts";
 import HighchartsMap from "highcharts/modules/map";
 import HighchartsReact from "highcharts-react-official";
 
-import boliviaPopulation from '../data/bolivia-population.json'
+import boliviaPopulation from '../../data/bolivia-population.json'
 
 HighchartsMap(Highcharts);
 

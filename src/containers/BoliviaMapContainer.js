@@ -1,6 +1,6 @@
 import React from 'react'
 import useLoadData from '../hooks/useLoadData'
-import BoliviaMap from '../components/BoliviaMap'
+import BoliviaMap from '../components/charts/BoliviaMap'
 
 export default function Container() {
 

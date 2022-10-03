@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react'
 import WorldMapContainer from '../containers/WorldMapContainer';
 import BoliviaMapContainer from '../containers/BoliviaMapContainer';
-import BarChart from '../components/BarChart';
+import BarChart from '../components/charts/BarChart';
 import TabContainer from '../components/TabContainer';
 import TabHeader from '../components/TabHeader';
 import LineChart from '../components/LineChart';
