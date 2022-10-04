@@ -5,7 +5,7 @@ const nRenders = 100
 const Box = ({ component }) => {
 
   const [check, setCheck] = React.useState(false)
-  const [print10, setPrint10] = React.useState(true)
+  const [print10, setPrint10] = React.useState(false)
   const fileItems = [...Array(nRenders).keys()]
 
   return (
@@ -25,7 +25,6 @@ const Box = ({ component }) => {
               }
             </div>
           ) : (<>{component}</>)}
-          {component}
         </>
       )}
     </div>

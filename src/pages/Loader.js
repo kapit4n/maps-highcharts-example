@@ -3,7 +3,7 @@ import LoaderThree from '../components/loading/LoaderThree';
 import LoaderFour from '../components/loading/LoaderFour';
 import LoaderSix from '../components/loading/LoaderSix';
 import LoaderSeven from '../components/loading/LoaderSeven';
-import BoxContainer from '../decorator/BoxContainer';
+import BoxContainer from '../decorator/LoaderContainer';
 
 export default function () {
   return (
