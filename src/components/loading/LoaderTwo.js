@@ -7,8 +7,6 @@ export default function LoaderTwo() {
       <h3>react-shimmer-effects</h3>
       <h4>Button</h4>
       <ShimmerButton size="md" />
-      <h4>Title</h4>
-      <ShimmerTitle line={2} gap={10} variant="primary" />
       <h4>Text</h4>
 
       <div style={{ display: 'flex', gap: 10 }}>
